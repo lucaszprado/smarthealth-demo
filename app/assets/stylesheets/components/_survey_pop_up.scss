@@ -1,0 +1,62 @@
+#survey-container-open {
+  position: fixed;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  width: 320px;
+  height: 500px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  padding-top: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: #ffffff;
+}
+
+#survey-container-open .btn.btn-primary {
+  display: block; /* Make the button take the full width of its parent */
+  width: 96%; /* Set the button width to 90% of the parent div */
+  padding: 10px 0; /* Adjust vertical padding  */
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color:#05467e;
+}
+
+
+
+#survey-container-close {
+  position: fixed;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  width: 320px;
+  height: 50px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  padding-top: 5px;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+#embedded-container{
+  padding: 0px 2%;
+}
+
+#survey-container-close .btn.btn-primary {
+  display: block; /* Make the button take the full width of its parent */
+  width: 95%; /* Set the button width to 90% of the parent div */
+  padding: 10px auto; /* Adjust padding for visual appeal */
+  box-sizing: border-box;
+  margin: 0;
+  background-color:#05467e;
+}
+
+// Center the pop-up when on mobile devices
+@media (max-width: 768px) {
+  #survey-container-open,
+  #survey-container-close {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}

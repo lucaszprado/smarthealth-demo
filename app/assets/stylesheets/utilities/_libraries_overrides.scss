@@ -1,0 +1,129 @@
+
+// = Font Awesome =
+// == Icon size utilities ==
+.u-iconSize--xs {
+  @extend .fa-xs;
+  // Extra small, 0.75 times the standard size.
+}
+
+.u-iconSize--sm {
+  @extend .fa-sm;
+  // Small, 0.875 times the standard size.
+}
+
+.u-iconSize--lg {
+  @extend .fa-lg;
+  // Large, 1.33 times the standard size.
+}
+
+.u-iconSize--2x {
+  @extend .fa-2x;
+  // 2 times the standard size.
+}
+
+.u-iconSize--3x {
+  @extend .fa-3x;
+  // 3 times the standard size.
+}
+
+
+// = Bootstrap =
+// == list utilities ==
+
+.u-textSize--1 {
+  @extend .fs-1;
+}
+
+.u-textSize--2 {
+  @extend .fs-2;
+}
+
+.u-textSize--3 {
+  @extend .fs-3;
+}
+
+.u-textSize--4 {
+  @extend .fs-4;
+}
+
+.u-textSize--5 {
+  @extend .fs-5;
+}
+
+.u-textSize--6 {
+  @extend .fs-6;
+}
+
+.u-googleIconFont--w700 {
+  cursor: pointer;
+  // @extend .material-symbols-outlined;
+}
+
+
+
+// Google Material Icons
+// IMPORTANT: The Google Fonts stylesheet sets font-size: 24px on .material-symbols-outlined.
+// We override it by explicitly setting font-size to a value that Tailwind can override.
+// Since Tailwind CSS loads AFTER application.css, its utility classes will win.
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48;
+  // Override Google Fonts default - Tailwind utilities will override this
+  line-height: 1;
+}
+
+// Material Symbols Icon Size Utilities
+.material-symbols-outlined.u-iconSize--sm {
+  font-size: 1.125rem; // 18px
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 20
+}
+
+.material-symbols-outlined.u-iconSize--xs {
+  font-size: 1rem; // 16px
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 20
+}
+
+.material-symbols-outlined.text-5xl {
+  font-size: 3rem; // 16px
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+// TLDR: We're not using Tailwind override anymore because where we have Tailwind, we only add the Tailwind stylesheet_tag.
+// Tailwind Preflight Override Bootstrap =
+// Tailwind preflight uses LOW specificity selectors (* elements, specificity 0,0,0,0)
+// Bootstrap uses element selectors with higher specificity (p, a, etc., specificity 0,0,0,1)
+// This makes Bootsratp to override Tailwind preflight
+// We add matching element selector rules here to enforce Tailwind preflight styles
+// (Equal specificity ensures our rules win due to CSS cascade order - this file loads after Bootstrap)
+
+// Remove margins from <p> elements (Tailwind preflight sets margin: 0)
+// p {
+//   margin-top: 0;
+//   margin-bottom: 0;
+// }
+
+// = Tailwind Utilities Override Bootstrap =
+// Bootstrap's a { text-decoration: underline; } uses shorthand property (element selector, specificity 0,0,0,1)
+// Tailwind's .no-underline { text-decoration-line: none; } uses longhand (class selector, specificity 0,0,1,0)
+// Class selectors should win, but to ensure Tailwind utilities work during Bootstrap migration,
+// we add a rule with element+class selector (specificity 0,0,1,1) to guarantee it wins
+// This selector means "target <a> elements that have the class no-underline"
+// a.no-underline {
+//   text-decoration: none;
+//   color: inherit; // Remove Bootstrap's blue link color, inherit parent text color instead
+// }

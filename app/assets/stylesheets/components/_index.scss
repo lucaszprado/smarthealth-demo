@@ -1,0 +1,36 @@
+// Import your components CSS files here.
+
+// To be refactored
+// @use rules must be at the top of the file
+@use "filters_panel";
+
+
+// SUIT Compliant
+// @use rules must be at the top of the file
+@import "list_section_headers";
+
+
+// SUIT COMPLIANT
+@import "search_bar";
+@import "result_card";
+@import "labels";
+@import "circular_button";
+@import "retangular_button";
+@import "navbar";
+@import "fixed_header";
+@import "chat/message";
+@import "chat/message_list";
+@import "chat/message_form";
+@import "status_badge";
+
+@import "alert";
+@import "avatar";
+@import "form_legend_clear";
+@import "logo";
+@import "survey_pop_up";
+@import "box_container";
+@import "biomarker_chart";
+@import "biomarker_references";
+@import "measures_table";
+@import "small_letters";
+@import "gray_icons";

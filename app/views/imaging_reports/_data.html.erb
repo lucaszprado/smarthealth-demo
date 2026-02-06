@@ -1,0 +1,6 @@
+<div data-refresh-list-target="list">
+  <% imaging_reports.each do |imaging_report| %>
+    <!-- Result Card -->
+      <%= render partial: "shared/result_card", locals: imaging_report_card_attributes(human, imaging_report) %>
+  <% end %>
+</div>

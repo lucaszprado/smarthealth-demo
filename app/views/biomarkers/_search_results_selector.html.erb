@@ -1,0 +1,21 @@
+<turbo-frame id="biomarker-search-results">
+  <% if biomarker_sections.present?%>
+    <% biomarker_sections.each do |section| %>
+      <% section[:biomarkers].each do |biomarker| %>
+        <div class="flex items-center justify-between ResultCard--search-selector hover:bg-gray-100 focus:bg-gray-100 py-1 border-b border-gray-100 cursor-pointer"
+             data-action="click->dropdown-selector#add click->reset-form#reset click->refresh-list#update"
+             data-menu-item-id="<%= biomarker[:biomarker_id] %>"
+             tabindex="0"
+             role="button">
+          <div class="ResultCard-content ps-1">
+            <p class="text-sm m-0 u-overflow--truncate">
+              <%= biomarker[:display_name] %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+  <p class="text-center text-muted py-3">No biomarkers found</p>
+  <% end %>
+</turbo-frame>

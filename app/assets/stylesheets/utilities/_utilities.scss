@@ -1,0 +1,164 @@
+.u-linkStdDisable{
+  text-decoration: none;
+  color: inherit;
+}
+
+// Background Colors
+.u-background--lightGray {
+  background: $light-gray;
+}
+
+.u-background--greenWhatsapp{
+  background-color: $green-whatsapp;
+}
+
+.u-background--blueBrandPrimary{
+  background-color: $blue-brand-primary;
+}
+
+.u-background--blueBrandNight{
+  background-color: $blue-brand-night;
+}
+
+.u-background--white{
+  background-color: $white;
+}
+
+// Text Colors
+.u-textColor--gray{
+  color: $gray;
+}
+
+.u-textColor--white{
+  color: $white;
+}
+
+.u-textColor--black{
+  color: $black;
+}
+
+.u-textColor--blueBrandNight{
+  color: $blue-brand-night;
+}
+
+
+
+
+// Icons
+  // Icon Size
+.u-iconSize--imageLike {
+  font-size: 10rem;
+}
+
+.u-iconSize--7RM {
+  font-size: 7rem;
+}
+
+// Colors
+.u-color--blueBrandPrimary{
+  color: $blue-brand-primary;
+}
+
+.u-color--blueBrandNight{
+  color: $blue-brand-night;
+}
+
+
+.u-color--blueBrandSecondary {
+  color: $blue-brand-secondary;
+}
+
+
+ // Icon Color -> Deprecated
+.u-iconColor--blueBrandSecondary {
+  color: $blue-brand-secondary;
+}
+
+.u-iconColor--blueBrandPrimary{
+  color: $blue-brand-primary;
+}
+
+.u-iconColor--blueBrandNight {
+  color: $blue-brand-night;
+}
+
+// Status Indicator
+.u-statusIndicator--title{
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 0.3rem;
+}
+
+
+
+// List
+.u-list--noStyle {
+  list-style: none;
+}
+
+
+// Borders
+.u-borderRadius--05 {                                                    /* Internal space */
+  border-radius: 0.5px;
+}
+
+.u-borderRadius--1 {                                                    /* Internal space */
+  border-radius: 1px;
+}
+
+.u-borderRadius--5 {                                                    /* Internal space */
+  border-radius: 5px;
+}
+
+.u-borderRadius--10 {                                                    /* Internal space */
+  border-radius: 10px;
+}
+
+
+
+// Shadows
+
+// Hover Effects
+.u-hoverEffects--YUp:hover {
+  transform: translateY(-5px); //This moves the card upwards by 5 pixels on the Y axis (negative value = up).
+  transition: transform 0.3s ease; //It makes the "transform" property change (defined above) smooth instead of instant.
+}
+
+
+
+// Buttons
+.u-buttonEffects--boxShadow {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1),
+              0px 4px 10px rgba(0, 0, 0, 0.05);
+  // Two level blur: main and secondary
+  // Both have only vertical shift. Main shadow has a very soft, spread-out shadow.
+  // And Secondary has a smaller and sharper shadow but barely visible.
+  transform: translateY(-2px);
+}
+.u-buttonEffects--hover {
+  transition: all 0.2s ease-in-out;
+  // Transition makes the effect (to hover state) smooth and natural instead of happening instantly.
+  // all → Applies the transition to all properties (shadow + transform). We can select a specif property if we want.
+  // 0.2s → The effect takes 0.2 seconds (fast but visible).
+  // ease-in-out → The animation starts slow, speeds up, and slows down again at the end.
+
+  &:hover {
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15), 0px 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    // This property moves the button upwards by 2 pixels when hovered => pressable, floating effect
+  }
+}
+
+// Text Overflow
+// Apply truncation to the element that directly contains the text (the <p> tag) for proper ellipsis behavior.
+.u-overflow--truncate {
+  overflow: hidden; // Hides overflowing text
+  text-overflow: ellipsis; /* Adds "..." when text is too long */
+  white-space: normal; // Prevents text from wrapping to multiple lines
+  display: -webkit-box;  // enables the multi-line ellipsis behavior
+  -webkit-line-clamp: 2; // allows up to 3 lines before truncating
+  line-clamp: 2; // Future compatibility
+  -webkit-box-orient: vertical; // ensures text flows in a block layout
+}

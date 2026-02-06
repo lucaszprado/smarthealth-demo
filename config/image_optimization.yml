@@ -1,0 +1,11 @@
+development:
+  webp:
+    min_kb: 200
+    quality: 80
+    output_dir: "app/assets/images/webp"
+
+production:
+  webp:
+    min_kb: 200
+    quality: 85
+    output_dir: "app/assets/images/webp"

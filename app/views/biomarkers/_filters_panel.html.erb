@@ -1,0 +1,44 @@
+<div class="FiltersPanel"
+     data-modal-backdrop-target="panel"
+     data-filters-target="panel">
+
+  <!-- Mobile: Bottom sheet with backdrop -->
+  <div class="FiltersPanel-backdrop" data-modal-backdrop-target="backdrop" data-action="click->modal-backdrop#backdropClick"></div>
+
+  <div class="FiltersPanel-content">
+    <div class="FiltersPanel-header">
+      <h5 class="FiltersPanel-title">Filtros</h5>
+      <!--button class="btn-close FiltersPanel-closeButton" data-action="click->modal-backdrop#close"></button-->
+    </div>
+
+    <div class="FiltersPanel-body">
+      <div class="form-check form-switch FiltersPanel-option">
+        <input type="checkbox"
+               name="filters[]"
+               value="out_of_range"
+               class="form-check-input FiltersPanel-toggle"
+               id="filter-out-of-range"
+               data-filters-target="toggle"
+               data-action="change->filters#toggleChanged"
+               <%= 'checked' if params[:filters]&.include?('out_of_range') %>>
+        <label class="form-check-label FiltersPanel-label" for="filter-out-of-range">
+          Fora do intervalo
+        </label>
+      </div>
+
+      <div class="form-check form-switch FiltersPanel-option">
+        <input type="checkbox"
+               name="filters[]"
+               value="is_from_latest_exam"
+               class="form-check-input FiltersPanel-toggle"
+               id="filter-latest-exam"
+               data-filters-target="toggle"
+               data-action="change->filters#toggleChanged"
+               <%= 'checked' if params[:filters]&.include?('is_from_latest_exam') %>>
+        <label class="form-check-label FiltersPanel-label" for="filter-latest-exam">
+          Do último exame
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

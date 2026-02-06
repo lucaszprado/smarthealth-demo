@@ -1,0 +1,26 @@
+<div class="SearchBar u-child--w90"> <!-- search_human_biomarkers_path(@human) -->
+  <%= form_with url: search_url ,
+                method: :get,
+                html: { class: 'SearchBar-form',
+                        autocomplete: "off",
+                        data: {
+                          refresh_list_target: 'form',
+                          action: "submit->refresh-list#preventSubmit"
+                        } } do |f| %>
+    <div class="SearchBar-inputWrapper">
+      <%= f.text_field :query,
+                        class: "SearchBar-input",
+                        placeholder:"Digite um biomarcador",
+                        value: params[:query],
+                        data: {
+                              refresh_list_target:'searchInput',
+                              action: "keyup->refresh-list#update"
+                        }
+      %>
+      <span class="SearchBar-icon">
+        <i class="fa fa-search SearchBar-iconElement u-color--blueBrandSecondary"></i>
+      </span>
+      <%= f.hidden_field :query_ux, value: 'fixed-box' %>
+    </div>
+  <% end %>
+</div>

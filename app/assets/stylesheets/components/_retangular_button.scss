@@ -1,0 +1,36 @@
+.RetangularButtonKey {
+  @extend .u-buttonEffects--boxShadow;
+  @extend .u-buttonEffects--hover;
+  @extend .u-flex;
+  @extend .u-flex--alignCenter;
+  @extend .u-flex--justifyCenter;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  line-height: 0.7rem;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.85rem;
+  border: none;
+  gap: 0.5rem;
+}
+
+.RetangularButtonKey-icon {
+  color: $icon-gray; // Icon color
+}
+
+// Button Variations
+.RetangularButtonKey--horizontal {
+  @extend .u-flex--row;
+}
+
+.RetangularButtonKey--vertical {
+  @extend .u-flex--column;
+}
+
+@media (min-width: 768px) {
+  .RetangularButtonKey  {
+
+
+  }
+}

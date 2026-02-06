@@ -1,0 +1,30 @@
+<%# value = locals[:value] %>
+<%# unit_name = locals[:unit_name] %>
+<%# status_color_code = locals[:status_color_code] %>
+<%# status_text = locals[:status_text]%>
+<%# gender = locals[:gender]%>
+<%# human_age = locals[:human_age]%>
+<%# lower_band = locals[:lower_band]%>
+<%# upper_band = locals[:upper_band]%>
+
+
+<!-- Last measure div -->
+<div class="u-flex u-flex--justifyStart u-flex--alignCenter mb-4">
+  <p class="u-textMargin--noMargin">
+  Última Medição: <%= last_measure_attributes[:value] %>
+  <%= last_measure_attributes[:unit_name] %>
+  </p>
+  <span class="u-statusIndicator--title is-status--<%= last_measure_attributes[:status_color_code] %> ms-3 me-1"> </span>
+  <p class="u-textMargin--noMargin"> <%= last_measure_attributes[:status_text] %> </p>
+</div>
+
+<!-- Reference Values Div -->
+<div class="box-container-central pb-0" id="reference-values">
+  <h5>Valores de referência</h5>
+  <p class="small text-secondary"> Referência: <%= last_measure_attributes[:gender] %> de <%= last_measure_attributes[:human_age] %> anos </p>
+  <div class="text-elements-flex-start">
+    <p>Normal: </p>
+    <p> <%= last_measure_attributes[:lower_band] %> - <%= last_measure_attributes[:upper_band] %> <%= last_measure_attributes[:unit_name] %> </p>
+  </div>
+
+</div>

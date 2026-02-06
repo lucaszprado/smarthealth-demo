@@ -1,0 +1,7 @@
+# Centralized configuration for the application's meta tags
+meta_product_name: "myBase"
+meta_title: "myBase - Carteira de saúde digital"
+meta_description: "Histórico de saúde centralizado,
+seguro e sempre com você!"
+meta_image: "logo_blue.png" # should exist in `app/assets/images/`
+twitter_account: "" # required for Twitter Cards

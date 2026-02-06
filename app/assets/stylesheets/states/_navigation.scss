@@ -1,0 +1,21 @@
+// Navigation States
+// Following SUIT CSS convention: .is-stateName
+
+.is-active {
+  color: #3b82f6 !important; // Blue color for active state
+
+  i {
+    color: #3b82f6 !important;
+  }
+}
+
+// Alternative: More specific state classes if needed
+.is-navbarActive {
+  color: #3b82f6 !important;
+  background-color: #eff6ff;
+  border-radius: 0.5rem;
+
+  i {
+    color: #3b82f6 !important;
+  }
+}

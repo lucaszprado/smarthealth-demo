@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= meta_title %> </title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Favicon -->
+    <%= favicon_link_tag 'logo_icon_transparent.png' %>
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path('logo_icon_transparent.png') %>">
+
+    <!-- Facebook Open Graph data-->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%# Google Fonts - Load for both Bootstrap and Tailwind pages %>
+    <%# This removes the need to import the fonts in the application.scss file%>
+    <%# Preconnect improves performance by establishing early connections to Google Fonts servers %>
+    <!-- Preconnect Link vs Preload ESM: Similar concept but different — preconnect establishes connections, preload fetches resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Establishes a connection with fonts.googleapis.com (CSS) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Establishes a connection withfonts.gstatic.com (font files) with crossorigin -->
+    <%# Text fonts: Lato (body) and Noto Sans (headers) %>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <%# Icon font: Material Symbols %>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,add_circle,chevron_left,close,more_horiz" rel="stylesheet">
+
+    <%# Conditionally load application stylesheet %>
+    <%# If Bootstrap is not used, we define @skip_bootstrap_stylesheet in the controller -> This doesn't load application.css, load font_awesome.css and tailwind.csss as single stylesheets %>
+    <% unless skip_bootstrap_stylesheet? %>
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <% else %>
+      <%# Load Font Awesome independently when Bootstrap is skipped %>
+      <%= stylesheet_link_tag "font_awesome", "data-turbo-track": "reload" %>
+    <% end %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+
+     <!-- Shim for older browsers compatibility -->
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.2/dist/es-module-shims.js"></script>
+
+    <%= javascript_importmap_tags %>
+    <%= turbo_include_tags %>
+
+    <!-- Other head content like stylesheets, meta tags, etc. -->
+
+
+    <!-- Hotjar Tracking Code for https://smarthealth-prod-a89f7e2c4ece.herokuapp.com/ -->
+    <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:5191202,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          // this seems to do the trick
+          r.setAttribute("data-turbo-track","reload")
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+
+  </head>
+
+  <body class="<%= content_for?(:navbar_top) ? 'has-navbar-top' : '' %> <%= content_for?("navbar_bottom") ? 'has-navbar-bottom' : '' %>">
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <%= yield :navbar_top %>
+    <!--
+    Uncoment to add the bottom navbar
+    <%= yield :navbar_bottom %>
+    -->
+    <%= yield %>
+  </body>
+
+</html>

@@ -1,0 +1,7 @@
+<div data-refresh-list-target='list'>
+
+  <% biomarker_sections.each do |section| %>
+    <!-- Section partial -->
+      <%= render partial: "biomarkers/section", locals: {section: section, human: human} %>
+  <% end %>
+</div>

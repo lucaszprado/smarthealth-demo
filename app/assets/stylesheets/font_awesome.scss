@@ -1,0 +1,21 @@
+// Font Awesome standalone stylesheet (independent of Bootstrap)
+// This file can be loaded separately when Bootstrap is skipped
+
+/*
+$fa-font-path: "font-awesome";
+- In Rails with the font-awesome-sass gem, the fonts are available via the Rails asset pipeline using a logical path, not a file system path.
+- When you set:
+      $fa-font-path: "font-awesome";
+
+- You're telling Font Awesome to use the Rails asset path helper, which will resolve to the correct location in the compiled CSS.
+- If you don't set this variable, Font Awesome would use the default "../webfonts" path, which likely won't match where Rails serves the fonts, causing 404s and missing icons.
+
+TLDR
+- Default: "../webfonts" (file system relative path)
+- Rails needs: "font-awesome" (Rails asset pipeline logical path)
+- Result: Font Awesome CSS correctly references the fonts Rails serves
+- This is a common pattern when using asset gems in Rails — you override paths to match Rails' asset pipeline structure.
+*/
+
+$fa-font-path: "font-awesome"; // This overrides the default path to the Font Awesome fonts
+@import "font-awesome";

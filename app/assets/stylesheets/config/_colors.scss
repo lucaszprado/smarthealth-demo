@@ -1,0 +1,53 @@
+// Define variables for your color scheme
+
+// Primary Colors:
+$red: #f44336;
+$blue: #0D6EFD;
+$blue-light: #61c3f5;
+$yellow: #ffc107;
+$orange: #E67E22;
+$green: #4caf50;
+$green-whatsapp: #128C7E;
+$cian: #00FFFF;
+$turquoise: #22f19e;
+$purple: #934caf;
+$brown:  #61440b;
+$pink: #f16cce;
+$teal: #17a2b8;
+$magenta: #8c1946;
+$gray: #706e6e;
+$black: #010101;
+$white: #FFFFFF;
+
+
+
+// Pallete Colors: -> TBU
+$blue-brand-primary: #1F80FF;
+$blue-brand-secondary: #81B0EF;
+$blue-brand-night: #0C1B33;
+$orange-brand: #FF885B;
+$gray-brand: #F2EFEA;
+
+// Icon colors
+$icon-gray: #555;
+
+// Text colors
+$text-black: #333;
+$text-gray: #8c8c8c;
+$text-gray-700: #5a5a5a;
+
+// Background Color
+$background-color: #f5f5f5;
+$light-gray: #FBFBFB;
+$light-gray-700: #D2D2D2;
+$light-blue: #A1C0FF;
+
+
+
+// Define global scss variables to make them accessible in javascript
+:root {
+  --green: #4caf50;
+  --yellow: #ffc107;
+  --text-gray: #8c8c8c;
+  --blue: #81B0EF
+}

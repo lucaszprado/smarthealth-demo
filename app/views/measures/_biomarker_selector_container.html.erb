@@ -1,0 +1,62 @@
+<!-- Wrapper for toggle and backdrop controllers (outside dropdown-selector scope) -->
+<!-- Both controllers on same element: toggle dispatches events here, backdrop listens here -->
+<div data-controller="toggle backdrop"
+     data-action="toggle:opened->backdrop#showBackdrop toggle:closed->backdrop#hideBackdrop toggle:request-close->toggle#toggleChanged">
+
+  <!-- Dropdown selector scope (backdrop is outside this) -->
+  <!-- Receives toggle:opened event dispatched directly on this element -->
+  <!-- The child element cannot receive an event dispatched from its parent through normal bubbling. When the toggle controller (on the parent element) dispatches toggle:opened, it bubbles up to ancestors, not down to the child element where dropdown-selector is -->
+  <div class="relative inline-flex flex-col w-full gap-3"
+       data-controller="modal-backdrop dropdown-selector"
+       data-modal-backdrop-target="panel"
+       data-modal-backdrop-open-class-value="is-open"
+       data-modal-backdrop-lock-body-value="mobile"
+       data-toggle-target="dropdownSelector"
+       data-action="toggle:opened->dropdown-selector#activate"
+       data-dropdown-selector-params-name-value="biomarker_ids[]"
+       data-dropdown-selector-frame-ids-value="<%= ["chart-frame", "selected-biomarkers"].to_json %>">
+
+    <button type="button"
+            class="flex justify-end bg-gray-50"
+            data-action="click->toggle#toggleChanged">
+      <div class="material-symbols-outlined text-gray-500 bg-gray-200 rounded-full transition-colors hover:bg-gray-400 hover:text-gray-800 p-1 mt-2 me-2"
+            data-toggle-target="toggleButton">
+        more_horiz
+      </div>
+    </button>
+
+    <!-- Desktop: Dropdown Panel -->
+    <div class="hidden absolute top-full right-0 w-90 rounded-md max-w-sm bg-white border border-gray-100 shadow-2xl -translate-y-0 transition-all duration-200"
+         data-toggle-target="desktopAffordance" data-dropdown-selector-target="desktopClickableArea">
+
+      <div class="flex justify-between items-center">
+        <p class="px-3 pt-3 text-md font-semibold m-0">Biomarcadores selecionados</p>
+      </div>
+
+      <div class="p-1">
+        <%= render partial: "measures/biomarker_selector",
+                   locals: { human: human, selected_ids: selected_ids, search_query: search_query} %>
+      </div>
+    </div>
+
+    <!-- Mobile: Drawer Panel -->
+    <div class="hidden fixed inset-x-0 bottom-0 h-[50vh] bg-white rounded-t-3xl shadow-2x-l transition-transform duration-300 ease-out md:hidden z-20 flex flex-col"
+         data-toggle-target="mobileAffordance" data-dropdown-selector-target="mobileClickableArea">
+      <div class="flex justify-between items-center pl-3 pt-3 flex-shrink-0">
+        <p class="m-0 font-bold">Biomarcadores selecionados</p>
+
+      </div>
+      <div class="px-3 py-2 pb-6 flex-1 overflow-hidden flex flex-col">
+        <%= render partial: "measures/biomarker_selector",
+                   locals: { human: human, selected_ids: selected_ids, search_query: search_query} %>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Backdrop outside dropdown-selector scope but inside toggle/backdrop controller scope -->
+  <div class="hidden fixed inset-0 bg-gray-400/50 backdrop-blur-none z-10 md:hidden"
+       data-backdrop-target="backdropElement">
+  </div>
+
+</div>

@@ -1,0 +1,20 @@
+.ListSection {
+  background: inherit;
+}
+
+.ListSection-header--sticky {
+  position: sticky;
+  top: 10rem;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: $light-gray;
+  color: $text-gray;
+}
+
+.ListSection-count {
+
+}
+
+.ListSection-content {
+  // Content area for biomarker cards
+}

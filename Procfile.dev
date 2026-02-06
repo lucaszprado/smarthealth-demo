@@ -1,0 +1,6 @@
+web: rails server -p 3000
+worker: rails solid_queue:start
+# We prefer to open a tunnel to the app in the terminal. Otherwise, we would need to change the url in the app every time we restart overmind.
+# tunnel: ngrok http 3000 --log=stdout
+sass: bin/rails dartsass:watch
+tailwind: bin/rails tailwindcss:watch

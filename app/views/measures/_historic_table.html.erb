@@ -1,0 +1,32 @@
+<%# measure = locals[:measure] %>
+
+<div class="table-div mt-5 mb-5">
+  <table class="table measures-table table-hover align-middle">
+    <thead>
+      <tr>
+        <td class="small text-center"> Data </td>
+        <td class="small text-center"> Medida </td>
+        <td class="small text-center"> Exame </td>
+      </tr>
+    </thead>
+    <tbody>
+        <% primary_biomarker_data[:measure_series][:measures_with_sources_desc].each do |key, value| %>
+
+        <!--First value is measure value. Second value is the measure source. -->
+          <tr>
+            <td class="small text-secondary text-center"> <%= key.strftime("%d/%m/%Y") %> </td>
+            <td class="small text-secondary text-center"> <%= value[0] %> </td> <!--Format number to string with two decimal places -->
+            <td class="small text-secondary text-center">
+              <% if value[1].files.attached?%>
+                <%= link_to rails_blob_path(value[1].files.first, disposition: "inline") do %>
+                  <i class="fa-solid fa-file-pdf gray-icon"></i>
+                <% end %>
+              <% else %>
+                -
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,189 @@
+
+// Padding and Margin
+.u-padding--1 {
+  padding: 1rem;
+}
+
+.u-padding--2 {
+  padding: 2rem;
+}
+
+.u-padding--01RM {
+  padding: 0.1rem;
+}
+
+.u-paddingTop--5RM {
+  padding-top: 5rem;
+}
+
+.u-paddingTop--75RM {
+  padding-top: 7.5rem;
+}
+
+.u-paddingBottom--5RM {
+  padding-bottom: 5rem;
+}
+
+.u-margin--005 {
+  margin: 0.05rem;
+}
+
+.u-margin--01 {
+  margin: 0.1rem;
+}
+
+.u-marginX--025RM {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.u-marginX--05RM {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.u-marginRight--025RM {
+  margin-right: 0.25rem;
+}
+
+.u-marginTop--05RM {
+  margin-top: 0.5rem;
+}
+
+.u-marginRight--05RM {
+  margin-right: 0.5rem;
+}
+
+.u-marginLeft--05RM {
+  margin-left: 0.5rem;
+}
+
+// Flexbox properties utilities
+.u-flex {
+  display: flex;
+}
+
+.u-flex--row {
+  flex-direction: row; // Main axis for flex box is horizontal
+}
+
+.u-flex--column{
+  flex-direction: column; // Main axis for flex box is vertical
+}
+
+.u-flex--justifyCenter {
+  justify-content:center; // child elements are centered across the main axis.
+}
+
+.u-flex--justifyEnd {
+  justify-content: end; // child elements are at the end across the main axis.
+}
+
+.u-flex--justifyBetween {
+  justify-content: space-between; // child elements are evenly spaced across the main axis. Starts and ends with borders.
+}
+
+.u-flex--justifyStart {
+  justify-content: flex-start; // Aligns all child elements to the start of the main axis.
+}
+
+.u-flex--justifyEvenly {
+  justify-content: space-evenly; // child elements are evenly spaced across the main axis. Also borders.
+}
+
+.u-flex--alignCenter {
+  align-items: center; // Child elements are centered on the cross-axis direction
+}
+
+.u-flex--alignStart {
+  align-items: start; // Child elements are at the start on the cross-axis direction
+}
+
+.u-flex--wrap {
+  flex-wrap: wrap; // Allows wrap inside flexbox
+}
+
+// Parent - Child Relationship
+// A width utility that sets an element’s width to 100% of its parent container
+.u-child--w100 {
+  width: 100%
+}
+
+.u-child--w80 {
+  width: 80%
+}
+
+.u-child--w90 {
+  width: 95%
+}
+
+.u-child--w70 {
+  width: 70%
+}
+
+
+
+
+
+/* ===== Text Alignment ===== */
+.u-textAlign--right {
+  text-align: right;
+}
+
+.u-textAlign--center {
+  text-align: center;
+}
+
+.u-textAlign--justify{
+  text-align: justify;
+}
+
+.u-textAlign--left {
+  text-align: left;
+}
+
+
+// ==== Navbar Positioning =====
+
+// Adjust content to start below the Nav bar
+.has-navbar-top {
+  padding-top: 3rem;
+}
+
+// Adjust content to finish above the Navbar
+.has-navbar-bottom {
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+
+  // Adjust content to start below the Navbar on larger screens
+  .has-navbar-top {
+    padding-top: 6rem;
+  }
+
+  // Adjust content to finish above the Navbar on larger screens
+  .has-navbar-bottom {
+    padding-bottom: 6rem;
+  }
+}
+
+
+/* ===== Block Elements ===== */
+.u-block--inline {
+  display: inline-block;
+}
+
+
+// === Absolute Width and height dimensions ===
+.u-minHeight--200 { min-height: 200px; }
+.u-minHeight--300 { min-height: 300px; }
+.u-minHeight--400 { min-height: 400px; }
+.u-minHeight--500 { min-height: 500px; }
+.u-maxHeigthRM--5 { max-height: 5rem; }
+
+
+// ===== Bootstrap utility classes =====
+// class = "container"
+// class = "row justify-content-center">
+// class = "col-12 col-lg-9"

@@ -1,0 +1,16 @@
+<%# measure = locals[:measure] %>
+
+<!-- Last measure div -->
+<div class="u-flex u-flex--justifyStart u-flex--alignCenter mb-4">
+  <%= render partial: 'measures/non_ranges', locals: {last_measure_attributes: primary_biomarker_data[:last_measure_attributes]} %>
+</div>
+
+<!-- JavaScript Chart-->
+<div class="box-container-central mb-5" id="biomarker-chart">
+  <div>
+    <h5> Evolução do Biomarcador </h5>
+  </div>
+
+  <!-- Historic Table Div -->
+  <%= render partial:"measures/historic_table", locals: {primary_biomarker_data: primary_biomarker_data} %>
+</div>

@@ -1,0 +1,39 @@
+.box-container-central {
+  background: white;                         /* White background */
+  padding: 1rem;                               /* Internal space */
+  border-radius: 0.5px;                        /* Small radius */
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+
+
+#reference-values {
+  h5 {
+    padding: 0rem;
+    margin: 0rem;
+  }
+}
+
+
+#biomarker-chart {
+  h5 {
+    padding-bottom: 1rem;
+    margin: 0rem;
+  }
+}
+
+.BoxElevated {
+  background: white;                         /* White background */
+  padding: 1rem;                               /* Internal space */
+  border-radius: 0.5px;                        /* Small radius */
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.BoxElevated--twoColumnContent {
+  background: white;                         /* White background */
+  padding: 0% 50% 0 0;                               /* Internal space */
+  border-radius: 0.5px;                        /* Small radius */
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  display: flex;
+  justify-content: space-between;
+}

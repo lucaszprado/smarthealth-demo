@@ -1,0 +1,123 @@
+// COMPONENT: FiltersPanel
+
+// Main component container
+.FiltersPanel {
+  // position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  display: none;
+
+  // Modifier: Open state
+  &--isOpen {
+    display: block;
+  }
+}
+
+// Element: Container for relative positioning
+.FiltersPanel-iconContainer {
+  position: relative;
+}
+
+// Element: Backdrop
+.FiltersPanel-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(216, 214, 214, 0.6);
+  //backdrop-filter: blur(1px);
+}
+
+// Element: Content container
+.FiltersPanel-content {
+  background: white;
+  border-radius: 12px 12px 0 0;
+  padding: 1.25rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+
+  // Mobile: Fixed at bottom of viewport (default for small screens)
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 60vh;
+
+  // Desktop: Positioned relative to the button container (md breakpoint and up)
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 100%; // Position below the button
+    left: auto;
+    right: 0; // Align with the right edge of the button
+    bottom: auto;
+    transform: none;
+    min-width: 250px;
+    max-height: none;
+    border-radius: 12px;
+    margin-top: 0.5rem; // Small gap below the filter button
+    z-index: 1060; // Higher than backdrop
+  }
+}
+
+// Element: Header
+.FiltersPanel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+// Element: Title
+.FiltersPanel-title {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+// Element: Close button
+.FiltersPanel-closeButton {
+  // Uses Bootstrap btn-close class
+}
+
+// Element: Body content
+.FiltersPanel-body {
+  // Container for filter options
+}
+
+// Element: Filter option
+.FiltersPanel-option {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Element: Filter toggle
+.FiltersPanel-toggle {
+  // Uses Bootstrap form-check-input class
+}
+
+// Element: Filter label
+.FiltersPanel-label {
+  // Uses Bootstrap form-check-label class
+}
+
+// Element: Filter affordance button
+.FiltersPanel-affordance {
+  // Uses Bootstrap btn classes
+  // Additional styling can be added here if needed
+}
+
+// Element: Filter badge indicator
+.FiltersPanel-badge {
+  // Uses Bootstrap badge classes
+  // Additional styling can be added here if needed
+}
+
+// Modal open state for body
+body.modal-open {
+  overflow: hidden;
+}

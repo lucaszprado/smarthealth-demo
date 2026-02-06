@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row justify-content-center">
+
+    <!-- turbo_stream_from is used to create a WebSocket connection that listens for updates on a specific channel (in this case, the conversation ID). -->
+    <!-- This channel broadcast real time updates for new messages and conversation status changes -->
+    <%= turbo_stream_from "#{@conversation.id}" %>
+
+    <!-- Test element to verify Turbo Stream connection -->
+    <div id="test_connection_<%= @conversation.id %>" style="display: none;">
+      Connection test
+    </div>
+
+    <div class="col-12 col-lg-9">
+
+      <div class="ConversationShow">
+        <div class="ConversationShow-header u-flex u-flex--row u-flex--justifyBetween u-flex--alignCenter">
+          <!-- Back button -->
+          <%= render 'shared/back_button_top', path_helper: admin_conversations_path %>
+          <h1 class="ConversationShow-title"> <%= @human&.name || @conversation.customer_phone_number %></h1>
+          <!-- Status badge -->
+          <div id="status_badge_<%= @conversation.id %>">
+            <%= render "admin/conversations/status_badge", conversation: @conversation %>
+          </div>
+
+          <!-- Action button -->
+          <div id="conversation_actions_<%= @conversation.id %>">
+            <%= render "admin/conversations/action_button", conversation: @conversation %>
+          </div>
+        </div>
+
+        <div class="ConversationShow-container">
+          <!-- id="messages" is used to identify the messages container that listens for turbo stream updates -->
+          <div id="messages" class="MessageList">
+            <% @messages.each do |message| %>
+              <%= render "admin/messages/message", message: message  %>
+            <% end %>
+          </div>
+
+          <div class="MessageForm u-marginTop--05RM">
+            <%= form_with model: [@conversation, @message],
+                url: admin_conversation_messages_path(@conversation),
+                html: {class: "MessageForm",
+                        data: {controller: "reset-form",
+                                reset_form_target: "form",
+                                action: "turbo:submit-end->reset-form#reset"}} do |f| %>
+              <div class="form-group">
+                <%= f.text_area :body,
+                    class: "form-control MessageForm-input",
+                    rows: 3,
+                    placeholder: "Type your message here..." %>
+              </div>
+              <%= f.submit "Send Message", class: "btn btn-primary MessageForm-submit" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

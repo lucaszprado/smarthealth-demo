@@ -1,0 +1,101 @@
+// COMPONENT: ResultCard
+
+// Main content inside ResultCard
+.ResultCard-content {
+  flex-grow: 1; // Makes the element expand to take up available space inside the flex container
+  min-width: 0; // Allows text to shrink properly instead of overflowing || Sets the minimum width an element can have. || Possible: 0 | auto | ...
+  white-space: normal; /* Allows text wrapping || Possible: nowrap | normal | ... / */
+  flex-shrink: 1; /* Allows shrinking */
+}
+
+// Title element inside ResultCard
+.ResultCard-title {
+  font-weight: normal;
+  display: -webkit-box;  // enables the multi-line ellipsis behavior
+  -webkit-line-clamp: 3; // allows up to 3 lines before truncating
+  line-clamp: 3; // Future compatibility
+  -webkit-box-orient: vertical; // ensures text flows in a block layout
+  overflow: hidden; // Hides overflowing text
+  text-overflow: ellipsis; /* Adds "..." when text is too long */
+  white-space: normal;
+  min-width: 0; // Ensures the element can shrink properly inside a flex container
+  flex-shrink: 1; /* Allows it to shrink inside flexbox */
+
+  /* Fallback for browsers that don't support -webkit-line-clamp */
+  max-height: 4.5rem; /* Approx. 3 lines (adjust based on font-size and line-height) */
+  line-height: 1.5rem; /* Ensures correct height calculation */
+}
+
+.ResultCard-keyInfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 0.1rem;
+  flex-shrink: 0;
+  white-space: normal;
+  //width: 35vw;
+  margin-left: 1.25rem;
+}
+
+.ResultCard-keyInfosIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 0.3rem;
+}
+
+.ResultCard-statusIndicator{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 0.3rem;
+  flex-shrink: 0; /* Prevents shrinking */
+}
+
+
+// External card layout
+.ResultCard {
+  display: flex;                  // Enables Flexbox
+  justify-content: space-between; // Distributes items with max space between them. First child aligns left, last child aligns right.
+  align-items: start;            // Aligns items vertically in the center
+  padding: 0.75rem;                // Adds space inside the element
+  gap: 0.15rem;
+  height: 6rem;
+
+  // ResultCard hover effect
+  &:hover {
+    transform: translateY(2px);
+    //box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: var(--Primary, #F5F5F5);
+  }
+
+  // Elements inside ResultCard that will be adjusted from a min-width: 768px (large devices)
+  @media (min-width: 768px) {
+
+    i {
+      font-size: 2.5em; /* Adjust the size as needed */
+    }
+  }
+
+}
+
+// Modifiers
+// The rule that comes later in the CSS file wins. Since .ResultCard--biomarkers comes after .ResultCard, it will override the default height.
+// Base styles are always applied
+// Modifier styles enhance/override specific properties
+
+// Height variants
+.ResultCard--biomarkers {
+  height: 5rem;
+}
+
+.ResultCard--imaging-reports {
+  height: 7rem;
+}
+
+.ResultCard--search-selector {
+  height: 3rem;
+}

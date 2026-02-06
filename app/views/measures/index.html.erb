@@ -1,0 +1,19 @@
+<div class = "container">
+  <div class = "row justify-content-center">
+    <div class = "col-12 col-lg-9">
+       <!-- Back button -->
+      <%= render 'shared/back_button_top' %>
+
+      <!-- Biomarker name -->
+      <h1 class="u-textSize--5 u-textFontWeight--bold mt-3 mb-3"> <%= @primary_biomarker_data[:last_measure_attributes][:biomarker_title] %> </h1>
+      <h2>  </h2>
+
+      <!-- Partials workflow to display the biomarker data -->
+      <div>
+        <%= render partial: select_view_type(@primary_biomarker_data, @biomarker_series),
+                   locals: {primary_biomarker_data: @primary_biomarker_data, biomarker_series: @biomarker_series} %>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+/**
+ * shadcn-rails Complete Styles
+ *
+ * This file imports all shadcn-rails styles including:
+ * - base.css: CSS variables, theme colors, and animations
+ * - components.css: Component-specific styles for data-state and interactive elements
+ *
+ * Import this single file to get everything:
+ *   @import "shadcn/index";
+ *
+ * Or with asset pipeline:
+ *   *= require shadcn/index
+ *
+ * You can also import files individually if you only need specific styles.
+ * Tailwind CSS doesn't have a load path system like Sass. We need to use relative paths in @import statements.
+ */
+
+
+@import "./base.css";
+@import "./components.css";

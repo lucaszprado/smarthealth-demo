@@ -1,0 +1,507 @@
+[
+    {
+        "id": 1,
+        "title": "Allergy testing"
+    },
+    {
+        "id": 2,
+        "title": "Autoimmune diseases"
+    },
+    {
+        "id": 3,
+        "parentId": 2,
+        "title": "Antiphospholipid syndrome"
+    },
+    {
+        "id": 4,
+        "parentId": 2,
+        "title": "Autoimmune digestive disorders"
+    },
+    {
+        "id": 5,
+        "parentId": 2,
+        "title": "Autoimmune skin diseases"
+    },
+    {
+        "id": 6,
+        "parentId": 2,
+        "title": "Autoimmune lungs and heart diseases"
+    },
+    {
+        "id": 7,
+        "parentId": 2,
+        "title": "Autoimmune neurological diseases"
+    },
+    {
+        "id": 8,
+        "parentId": 2,
+        "title": "Autoimmune liver diseases"
+    },
+    {
+        "id": 9,
+        "parentId": 2,
+        "title": "Autoimmune diseases of the reproductive organs"
+    },
+    {
+        "id": 10,
+        "parentId": 2,
+        "title": "Antithyroid autoantibodies"
+    },
+    {
+        "id": 11,
+        "parentId": 2,
+        "title": "Antibodies against endocrine pancreatic antigens"
+    },
+    {
+        "id": 12,
+        "parentId": 2,
+        "title": "Vasculitis and kidney disorders"
+    },
+    {
+        "id": 13,
+        "parentId": 2,
+        "title": "Immune thrombocytopenia"
+    },
+    {
+        "id": 14,
+        "parentId": 2,
+        "title": "Rheumatoid arthritis, joint disorders"
+    },
+    {
+        "id": 15,
+        "parentId": 2,
+        "title": "Connective tissue diseases"
+    },
+    {
+        "id": 16,
+        "title": "Biochemistry tests (blood)"
+    },
+    {
+        "id": 17,
+        "parentId": 16,
+        "title": "Amino acids, blood"
+    },
+    {
+        "id": 18,
+        "parentId": 16,
+        "title": "Antioxidants"
+    },
+    {
+        "id": 19,
+        "parentId": 16,
+        "title": "Blood proteins"
+    },
+    {
+        "id": 20,
+        "parentId": 16,
+        "title": "Iron regulatory proteins"
+    },
+    {
+        "id": 21,
+        "parentId": 16,
+        "title": "Vitamins"
+    },
+    {
+        "id": 22,
+        "parentId": 16,
+        "title": "Glucose and carbohydrate metabolism"
+    },
+    {
+        "id": 23,
+        "parentId": 16,
+        "title": "Bile pigments and acids"
+    },
+    {
+        "id": 24,
+        "parentId": 16,
+        "title": "Fatty acid"
+    },
+    {
+        "id": 25,
+        "parentId": 16,
+        "title": "Cardiac-specific proteins"
+    },
+    {
+        "id": 26,
+        "parentId": 16,
+        "title": "Lipids"
+    },
+    {
+        "id": 27,
+        "parentId": 16,
+        "title": "Inflammatory markers"
+    },
+    {
+        "id": 28,
+        "parentId": 16,
+        "title": "Bone turnover and osteoporosis markers"
+    },
+    {
+        "id": 29,
+        "parentId": 16,
+        "title": "Renal function markers"
+    },
+    {
+        "id": 30,
+        "parentId": 16,
+        "title": "Heavy metals and trace elements, blood"
+    },
+    {
+        "id": 31,
+        "parentId": 16,
+        "title": "Organic acids"
+    },
+    {
+        "id": 32,
+        "parentId": 16,
+        "title": "Specific proteins"
+    },
+    {
+        "id": 33,
+        "parentId": 16,
+        "title": "Blood substrates"
+    },
+    {
+        "id": 34,
+        "parentId": 16,
+        "title": "Blood enzymes"
+    },
+    {
+        "id": 35,
+        "parentId": 16,
+        "title": "Electrolytes and inorganic substances, blood"
+    },
+    {
+        "id": 36,
+        "title": "Urine analysis"
+    },
+    {
+        "id": 37,
+        "parentId": 36,
+        "title": "Amino acids, urine"
+    },
+    {
+        "id": 38,
+        "parentId": 36,
+        "title": "Trace elements and inorganic substances, urine"
+    },
+    {
+        "id": 39,
+        "parentId": 36,
+        "title": "Urine substrates"
+    },
+    {
+        "id": 40,
+        "parentId": 36,
+        "title": "Urine enzymes"
+    },
+    {
+        "id": 41,
+        "parentId": 36,
+        "title": "Biogenic amines, urine"
+    },
+    {
+        "id": 42,
+        "title": "Hairs"
+    },
+    {
+        "id": 43,
+        "parentId": 42,
+        "title": "Trace elements, hairs"
+    },
+    {
+        "id": 44,
+        "title": "Hormonal studies"
+    },
+    {
+        "id": 45,
+        "parentId": 44,
+        "title": "Androgens"
+    },
+    {
+        "id": 46,
+        "parentId": 44,
+        "title": "Biogenic amines, blood"
+    },
+    {
+        "id": 47,
+        "parentId": 44,
+        "title": "Pituitary hormones"
+    },
+    {
+        "id": 48,
+        "parentId": 44,
+        "title": "Adrenocortical hormones"
+    },
+    {
+        "id": 49,
+        "parentId": 44,
+        "title": "Other hormones"
+    },
+    {
+        "id": 50,
+        "parentId": 44,
+        "title": "Hematopoietic function"
+    },
+    {
+        "id": 51,
+        "parentId": 44,
+        "title": "Neuroendocrine system"
+    },
+    {
+        "id": 52,
+        "parentId": 44,
+        "title": "Prenatal testing"
+    },
+    {
+        "id": 53,
+        "parentId": 44,
+        "title": "Fertility and reproduction"
+    },
+    {
+        "id": 54,
+        "parentId": 44,
+        "title": "Gastrointestinal function"
+    },
+    {
+        "id": 55,
+        "parentId": 44,
+        "title": "Fat metabolism function"
+    },
+    {
+        "id": 56,
+        "parentId": 44,
+        "title": "Parathyroid function"
+    },
+    {
+        "id": 57,
+        "parentId": 44,
+        "title": "Pancreas function"
+    },
+    {
+        "id": 58,
+        "parentId": 44,
+        "title": "Thyroid function"
+    },
+    {
+        "id": 59,
+        "title": "Laboratory diagnosis of Infectious diseases"
+    },
+    {
+        "id": 60,
+        "parentId": 59,
+        "title": "Viral hepatitis"
+    },
+    {
+        "id": 61,
+        "parentId": 59,
+        "title": "Gastrointestinal infections"
+    },
+    {
+        "id": 62,
+        "title": "Diagnosis of oncopathology"
+    },
+    {
+        "id": 63,
+        "parentId": 62,
+        "title": "Oncomarkers"
+    },
+    {
+        "id": 64,
+        "parentId": 62,
+        "title": "Early diagnosis tests"
+    },
+    {
+        "id": 65,
+        "title": "Immunohematology"
+    },
+    {
+        "id": 66,
+        "title": "Immune system research"
+    },
+    {
+        "id": 67,
+        "parentId": 66,
+        "title": "Lymphocytes and their subpopulations"
+    },
+    {
+        "id": 68,
+        "parentId": 66,
+        "title": "Interferon status"
+    },
+    {
+        "id": 69,
+        "parentId": 66,
+        "title": "Immunoglobulins"
+    },
+    {
+        "id": 70,
+        "parentId": 66,
+        "title": "Complement components"
+    },
+    {
+        "id": 71,
+        "parentId": 66,
+        "title": "Regulators and mediators of immune system"
+    },
+    {
+        "id": 72,
+        "title": "Feces analysis"
+    },
+    {
+        "id": 73,
+        "parentId": 72,
+        "title": "Clinical analysis, feces"
+    },
+    {
+        "id": 74,
+        "parentId": 72,
+        "title": "Biochemical analysis, feces"
+    },
+    {
+        "id": 75,
+        "title": "Cerebrospinal fluid (CSF) analysis"
+    },
+    {
+        "id": 76,
+        "title": "Blood coagulation studies"
+    },
+    {
+        "id": 77,
+        "title": "Nails"
+    },
+    {
+        "id": 78,
+        "parentId": 77,
+        "title": "Trace elements, nails"
+    },
+    {
+        "id": 79,
+        "title": "General clinical research"
+    },
+    {
+        "id": 80,
+        "parentId": 79,
+        "title": "Complete blood count"
+    },
+    {
+        "id": 81,
+        "parentId": 79,
+        "title": "Blood types and Rh factor"
+    },
+    {
+        "id": 82,
+        "title": "Urinalysis"
+    },
+    {
+        "id": 83,
+        "parentId": 59,
+        "title": "Viral infections"
+    },
+    {
+        "id": 84,
+        "parentId": 59,
+        "title": "Parasitic diseases"
+    },
+    {
+        "id": 85,
+        "parentId": 59,
+        "title": "Bacterial infections"
+    },
+    {
+        "id": 86,
+        "parentId": 66,
+        "title": "Other types of white blood cells"
+    },
+    {
+        "id": 87,
+        "title": "Densitometry"
+    },
+    {
+        "id": 88,
+        "parentId": 59,
+        "title": "Human Papillomavirus"
+    },
+    {
+        "id": 89,
+        "parentId": 59,
+        "title": "Urogenital tract biocenosis"
+    },
+    {
+        "id": 90,
+        "parentId": 16,
+        "title": "Therapeutic drug monitoring"
+    },
+    {
+        "id": 91,
+        "parentId": 72,
+        "title": "Stool Culture"
+    },
+    {
+        "id": 92,
+        "title": "Saliva"
+    },
+    {
+        "id": 93,
+        "parentId": 92,
+        "title": "Salivary Hormone Analysis"
+    },
+    {
+        "id": 94,
+        "title": "Serum indices"
+    },
+    {
+        "id": 95,
+        "parentId": 72,
+        "title": "Parasitic diseases exam, feces"
+    },
+    {
+        "id": 96,
+        "title": "Genitourinary discharge examination"
+    },
+    {
+        "id": 97,
+        "title": "ENT discharge examination"
+    },
+    {
+        "id": 98,
+        "title": "Genetic diagnosis"
+    },
+    {
+        "id": 99,
+        "title": "Semen analysis"
+    },
+    {
+        "id": 100,
+        "parentId": 36,
+        "title": "Urine Culture"
+    },
+    {
+        "id": 101,
+        "title": "Bone Marrow Examination"
+    },
+    {
+        "id": 102,
+        "title": "Liver function"
+    },
+    {
+        "id": 103,
+        "title": "Rhinocytogram"
+    },
+    {
+        "id": 104,
+        "title": "Vitals"
+    },
+    {
+        "id": 105,
+        "title": "Sweat analysis"
+    },
+    {
+        "id": 106,
+        "title": "Mycotoxins"
+    },
+    {
+        "id": 108,
+        "title": "Dietary"
+    }
+]

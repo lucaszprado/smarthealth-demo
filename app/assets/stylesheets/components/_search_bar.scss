@@ -1,0 +1,58 @@
+// Class reserved for any high level styling of the search bar
+.SearchBar {
+
+}
+
+/* Element: Input Wrapper */
+.SearchBar-inputWrapper {
+  @extend .position-relative; /* Allows absolute positioning of children */
+}
+
+/* Element: Input */
+.SearchBar-input {
+  @extend .form-control; /* Bootstrap input field styling */
+  @extend .rounded-pill; /* Makes the input field fully rounded */
+  @extend .ps-3; /* Adds left padding (1rem) */
+  @extend .pe-5; /* Adds right padding (to prevent text from overlapping icon) */
+  width: 100%; /* Ensures full-width input */
+  text-transform: scale(0.8); // Shrink input text "cheating" the browser
+}
+
+// Style only the pseudo element ::placeholder
+.SearchBar-input::placeholder {
+  transform: scale(0.8); /* Shrinks placeholder text */
+  transform-origin: left center;
+  display: inline-block; /* Ensures proper scaling */
+}
+
+
+/* Element: Icon Container */
+.SearchBar-icon {
+  @extend .position-absolute; /* Positions element absolutely within parent */
+  @extend .top-50; /* Moves element to 50% of the parent's height */
+  @extend .end-0; /* Aligns element to the far right (right: 0) of the nearest positioned ancestor*/
+  @extend .translate-middle-y; /* Centers vertically using transform. It shifts the element up by 50% of its own height,*/
+  @extend .pe-3; /* Adds right padding to avoid overlap */
+  cursor: pointer; /* Makes the icon clickable */
+}
+
+/* Element: Search Results Container */
+/* Applied directly to turbo-frame element */
+.SearchResults-container {
+  display: block; /* Ensure turbo-frame displays as block */
+  overflow-y: auto; /* Enable vertical scrolling when content exceeds max-height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  z-index: 1000; /* Ensure it appears above other content */
+  top: 100%; /* Position right at the bottom edge of the positioned parent */
+  left: 0;
+  margin-top: -1px; /* Slight overlap to eliminate visual gap from rounded borders */
+  //bottom: 0; /* Extend to parent's bottom edge - makes it fill remaining height */
+}
+
+// Elements that will be adjusted from a min-width: 768px (large devices)
+// @media (min-width: 768px) {
+
+//   .SearchBar-container {
+//     top: 6rem;
+//   }
+// }

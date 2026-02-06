@@ -1,0 +1,29 @@
+<!-- Partial for the action button -->
+<% case conversation.status %>
+<% when 'active' %>
+  <%= button_to "Arquivar conversa",
+                admin_conversation_path(conversation),
+                method: :patch,
+                params: { conversation: { status: 'closing' } },
+                class: "RetangularButtonKey RetangularButtonKey--horizontal u-background--gray u-textColor--black",
+                data: {
+                  turbo_stream: true,
+                  confirm: "Are you sure you want to archive this conversation?"
+                } %>
+<% when 'closing' %>
+  <button class="RetangularButtonKey RetangularButtonKey--horizontal u-background--gray u-textColor--black" disabled>
+    Closing...
+  </button>
+<% when 'closed' %>
+  <!-- No button shown for closed conversations -->
+<% when 'close_failed' %>
+  <%= button_to "Arquivar conversa",
+                admin_conversation_path(conversation),
+                method: :patch,
+                params: { conversation: { status: 'closing' } },
+                class: "RetangularButtonKey RetangularButtonKey--horizontal u-background--gray u-textColor--black",
+                data: {
+                  turbo_stream: true,
+                  confirm: "Are you sure you want to archive this conversation?"
+                } %>
+<% end %>

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9 mb-5">
+      <!-- Back button -->
+      <div data-controller='refresh-list modal-backdrop filters'>
+        <div class="FixedHeader pb-4">
+          <%= link_to human_path(@human.id), class: "mb-2 mt-4 material-symbols-outlined text-decoration-none link-dark" do %>
+            chevron_left
+          <% end %>
+          <h1 class="u-textSize--6 u-textFontWeight--bold ps-1 mt-3 mb-3">Ultimas medições</h1>
+          <div class="u-child--w100 u-flex u-flex--row u-flex--justifyBetween u-flex--alignCenter">
+             <!-- Search bar -->
+            <%= render 'search_form', search_url: @search_url %>
+
+            <!-- Filter Affordance - moved to right -->
+            <div class="u-marginLeft--05RM">
+              <div class="FiltersPanel-iconContainer">
+                <button class="FiltersPanel-affordance position-relative"
+                        data-action="click->modal-backdrop#open"
+                        data-filters-target="affordance">
+                  <i class="fa fa-filter u-color--blueBrandSecondary u-iconSize--lg"></i>
+                  <% if params[:filters]&.any? %>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill u-background--blueBrandNight FiltersPanel-badge">
+                      <%= params[:filters].size %>
+                    </span>
+                  <% end %>
+                </button>
+
+                <!-- Filter Panel - positioned relative to the button -->
+                <%= render 'filters_panel' %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biomarkers list -->
+        <!-- When there's a request from any link inside this frame, only this frame will be updated -->
+        <%= turbo_frame_tag 'biomarkers-list' do %>
+          <%= render partial: select_biomarker_sections_partial(@biomarker_sections), locals: { biomarker_sections: @biomarker_sections, human: @human } %>
+        <% end %>
+      </div>
+
+
+    </div>
+  </div>
+</div>

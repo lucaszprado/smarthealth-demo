@@ -1,0 +1,86 @@
+// Top Navbar from WelcomePage
+.NavbarTop {
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 4rem;
+  justify-content: space-between;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.NavbarTop-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.NavbarTop-menuButton {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+
+  &:hover {
+    color: #666;
+  }
+}
+
+// ===================================
+// Bottom Navbar from WelcomePage
+.NavbarBottom {
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+
+  // Bootstrap class
+  // Provides the base container styling for a navigation bar.
+  // It sets up key features such as background color, padding, and overall layout rules
+  // that are consistent across the entire navigation header.
+  @extend .navbar;
+
+  // Bootstrap class
+  // Fixes an element to the bottom of the viewport
+  // It stays in place even when the page is scrolled
+  @extend .fixed-bottom;
+}
+
+.NavbarBottom-nav {
+
+  // Bootstrap class
+  // Typically applied to an unordered list (<ul>) inside the navbar.
+  // It formats the list so that its child elements (usually navigation links or buttons marked with the class nav-item and nav-link) are styled appropriately.
+  @extend .navbar-nav;
+}
+
+.NavbarBottom-item {
+
+  // Bootstrap class
+  // Organizes the structure (list item)
+  // Represents an individual navigation item (often a list item wrapping a link) within a navigation group.
+  // It applies consistent spacing and styling rules to each navigation item.
+  @extend .nav-item;
+}
+
+.NavbarBottom-link {
+
+  // Bootstrap class
+  // Styles the actual link to match the navbar’s theme and spacing.
+  // The nav-link class is meant to be applied to anchor (<a>) elements within a navigation bar.
+  @extend .nav-link;
+}
+
+
+
+
+@media (min-width: 768px) {
+  .NavbarTop {
+    height: 6rem; // Comment when you have a logo
+  }
+  .has-navbar-top {
+    padding-top: 6rem;
+  }
+
+  .has-navbar-bottom {
+    padding-bottom: 6rem;
+  }
+}

@@ -1,0 +1,32 @@
+<!-- Last measure div + Reference Value Div-->
+<%= render partial: select_measure_type(primary_biomarker_data), locals: {last_measure_attributes: primary_biomarker_data[:last_measure_attributes]} %>
+
+
+<!-- JavaScript Chart-->
+<div class="box-container-central mt-4 mb-5" id="biomarker-chart">
+
+  <div>
+    <h5> Evolução do Biomarcador</h5>
+  </div>
+
+  <div class="flex justify-end bg-gray-50">
+    <%= render partial: 'measures/biomarker_selector_container',
+               locals: { human: @human, selected_ids: @selected_ids, search_query: @search_query}  %>
+  </div>
+
+
+  <div class="chart-container">
+    <!-- Chart canvas - chart controller is inside the frame so it reconnects on reload -->
+    <turbo-frame id="chart-frame">
+      <%= render partial: 'measures/chart_frame', locals: { biomarker_series: biomarker_series } %>
+    </turbo-frame>
+  </div>
+  <!-- Historic Table Div -->
+  <%= render partial: 'measures/historic_table', locals: {primary_biomarker_data: primary_biomarker_data} %>
+  <!-- Page Footnotes Div -->
+  <div class="small-letters">
+    <p> Fontes de informação: Nossas referências são baseadas em instiuições de pesquisa e associações médicas. <br>
+    Principais fontes: Biblioteca de Saúde da <a href= "https://www.mayoclinic.org/diseases-conditions" target="_blank"> Clínica Mayo</a>
+    e Centro de Controle e Prevenção de Doenças dos EUA - <a href="https://www.cdc.gov/health-topics.html" target="_blank">CDC</a>.</p>
+  </div>
+</div>

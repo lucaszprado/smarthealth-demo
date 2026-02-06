@@ -1,0 +1,32 @@
+// Google Fonts are loaded via HTML <link> tags in application.html.erb
+// This avoids duplicate loading and improves performance (HTML links are non-blocking)
+//
+// Fonts loaded:
+// - Lato (body text)
+// - Noto Sans (headers)
+// - Material Symbols (icons)
+
+// DO NOT IMPORT GOOGLE FONTS HERE -> They are loding at application.html.erb
+// Import Google fonts
+// @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans:wght@300;400;700&display=swap');
+// Import only normal fonts. No Italics.
+
+// Import Material Symbols font - Google Icons
+// Add more icons as needed
+//@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,add_circle,chevron_left,close,more_horiz");
+
+
+// Define fonts for body and headers (used by Bootstrap variables)
+$body-font: "Lato", "Helvetica", "sans-serif";
+$headers-font: "Noto Sans", "Helvetica", "sans-serif";
+
+
+// To use a font file (.woff) uncomment following lines
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('FontFile.eot');
+//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//        font-url('FontFile.woff') format('woff'),
+//        font-url('FontFile.ttf') format('truetype')
+// }
+// $my-font: "Font Name";

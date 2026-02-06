@@ -1,0 +1,12 @@
+<div class="status-badge-wrapper">
+  <% case conversation.status %>
+  <% when 'active' %>
+    <span class="badge is-status--green">Active</span>
+  <% when 'closed' %>
+    <span class="badge is-status--gray">Closed</span>
+  <% when 'closing' %>
+    <span class="badge is-status--yellow">Closing...</span>
+  <% when 'close_failed' %>
+    <span class="badge is-status--yellow">Close Failed</span>
+  <% end %>
+</div>

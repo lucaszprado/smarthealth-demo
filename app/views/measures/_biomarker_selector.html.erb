@@ -1,0 +1,50 @@
+<div class="flex flex-col gap-4 h-full min-h-0"
+  data-controller="refresh-list reset-form">
+
+  <div class="pb-2 border-b border-gray-100 flex-shrink-0">
+    <%= render partial: "measures/selected_biomarkers",
+               locals: {selected_ids: selected_ids} %>
+  </div>
+
+  <div class="flex flex-col gap-3 flex-1 min-h-0">
+    <div class="flex-shrink-0">
+      <%= form_with url: human_biomarkers_path(human),
+                    method: :get,
+                    html: {
+                            class: "SearchBar-form",
+                            autocomplete: "off",
+                            data: {
+                              refresh_list_target: "form",
+                              reset_form_target: "form",
+                              action: "submit->refresh-list#preventSubmit"
+                            }
+                          } do |f| %>
+        <div class="SearchBar-inputWrapper px-2">
+          <%= f.text_field :query,
+                            class: "SearchBar-input",
+                            placeholder: "Comparar",
+                            value: search_query,
+                            data: {
+                              refresh_list_target: "searchInput",
+                              reset_form_target: "form",
+                              action: "keyup->refresh-list#update"
+                            } %>
+          <span class="SearchBar-icon material-symbols-outlined SearchBar-iconElement u-color--blueBrandSecondary">
+            add_circle
+          </span>
+          <%= f.hidden_field :query_ux, value: 'transient-box' %>
+        </div>
+      <% end %>
+    </div>
+
+
+    <div data-refresh-list-target="list"
+          data-dropdown-selector-target="searchResultsContainer"
+          class="SearchResults-container--chartHeight overflow-hidden overflow-y-auto px-3 mb-2 flex-1 min-h-0">
+      <turbo-frame id="biomarker-search-results"
+                   src="<%= human_biomarkers_path(human, query_ux: 'transient-box', query: '') %>">
+
+      </turbo-frame>
+    </div>
+  </div>
+</div>

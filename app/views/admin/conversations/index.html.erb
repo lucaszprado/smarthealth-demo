@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9">
+      <h1>Conversations</h1>
+        <% @conversations.each do |conversation| %>
+          <%= link_to admin_conversation_path(conversation), class: "list-group-item list-group-item-action" do %>
+            <div class="ResultCard border-top border-bottom ps-1 u-flex u-flex--justifyBetween u-flex--alignCenter">
+              <div class="d-flex w-100 justify-content-between">
+                <div class="ResultCard-content ms-2">
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <h5 class="mb-0"> <%= conversation&.human&.name || conversation.customer_phone_number %></h5>
+                    <div class="status-badge-wrapper">
+                      <% case conversation.status %>
+                      <% when 'active' %>
+                        <span class="badge is-status--green badge-sm">Active</span>
+                      <% when 'closed' %>
+                        <span class="badge is-status--gray badge-sm">Closed</span>
+                      <% when 'closing' %>
+                        <span class="badge is-status--yellow badge-sm">Closing...</span>
+                      <% when 'close_failed' %>
+                        <span class="badge is-status--yellow badge-sm">Close Failed</span>
+                      <% end %>
+                    </div>
+                  </div>
+                    <p class="mb-1">
+                      <% last_message = conversation.messages.last %>
+                      <% if last_message %>
+                        <%= truncate(last_message.body, length: 100) %>
+                      <% else %>
+                        No messages yet
+                      <% end %>
+                </p>
+                </div>
+                <div class="u-textAlign--right me-2">
+                  <small>last inbound <br> <%= time_ago_in_words(conversation.updated_at) %> ago</small>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

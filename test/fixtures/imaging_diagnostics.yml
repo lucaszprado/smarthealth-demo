@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  method: MyString
+  summary_report: MyText
+  full_report: MyText
+  source: one
+  date: 2025-01-17 07:20:18
+
+two:
+  name: MyString
+  method: MyString
+  summary_report: MyText
+  full_report: MyText
+  source: two
+  date: 2025-01-17 07:20:18

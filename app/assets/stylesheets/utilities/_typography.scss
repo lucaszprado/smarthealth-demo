@@ -1,0 +1,54 @@
+// ===== p tag Font size =====
+
+// === Viewport based p tag font size =====
+// Viewport dimension determined based on mobile
+// Max rem dimension determined based on desktop
+.u-fontSizeVW--primary {
+  font-size: clamp(0.75rem, 3.75vw, 1.075rem);
+
+}
+
+.u-fontSizeVW--secondary {
+  font-size: clamp(0.65rem, 3vw, 0.85rem);
+  // font-size: clamp(0.65rem, 3vw, 2rem);
+  // font-size: 0.9rem;
+}
+
+.u-fontSizeVW--tertiary {
+  font-size: clamp(0.5rem, 2.5vw, 0.75rem);
+  // font-size: 0.7rem;
+}
+
+.u-fontSizeVW--quaternary {
+  font-size: clamp(0.34rem, 2vw, 0.5rem);
+  // font-size: 0.7rem;
+}
+
+
+// === REM based p tag font size / Simple text=====
+.u-fontSizeREM--primary {
+  font-size: $font-size-base;
+}
+
+.u-fontSizeREM--secondary {
+  font-size: 0.8 * $font-size-base;
+}
+
+.u-fontSizeREM--tertiary {
+  font-size: 0.6 * $font-size-base;
+}
+
+.u-textMargin--noMargin {
+  margin: 0;
+}
+
+// User for buttons that link to external sites
+.u-fontFamily--outbound {
+  font-family: Arial, sans-serif;
+}
+
+.u-textFontWeight--bold {
+  font-weight: 700;
+}
+
+

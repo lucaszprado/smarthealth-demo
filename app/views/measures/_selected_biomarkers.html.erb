@@ -1,0 +1,23 @@
+<!-- Selected biomarkers tags -->
+<turbo-frame id="selected-biomarkers">
+  <% if selected_ids.present? %>
+    <div>
+      <% Array(selected_ids).drop(1).each do |id| %>
+        <% biomarker = @human.biomarkers.find(id) %>
+        <% next unless biomarker %>
+        <span class="flex items-center justify-between px-3 py-1">
+          <span class="text-sm"><%= biomarker.title %></span>
+          <%Rails.logger.info("Biomarker: #{biomarker.inspect}")%>
+          <!-- TODO: Add a button instead of a div -> Focus utility doesn't work. Why?-->
+          <div class="material-symbols-outlined u-iconSize--sm rounded-full text-gray-500 hover:text-gray-700 focus:text-gray-700 focus:outline-1 focus:outline-offset-2 focus:outline-gray-500"
+                  data-action="click->dropdown-selector#remove"
+                  data-menu-item-id="<%= biomarker.id %>"
+                  tabindex="0"
+                  role="button">
+            close
+          </div>
+        </span>
+      <% end %>
+    </div>
+  <% end %>
+</turbo-frame>

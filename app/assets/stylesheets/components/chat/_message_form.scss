@@ -1,0 +1,26 @@
+// app/assets/stylesheets/components/_message_form.scss
+
+.MessageForm {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.MessageForm-input {
+  border: 1px solid var(--bs-gray-300);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  resize: none;
+  transition: border-color 0.2s ease;
+}
+
+.MessageForm-input:focus {
+  border-color: var(--bs-primary);
+  box-shadow: none;
+}
+
+.MessageForm-submit {
+  margin-top: 0.75rem;
+  width: 100%;
+}

@@ -1,0 +1,46 @@
+
+.MessageContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and message */
+}
+
+.Message {
+  display: flex;
+  margin-bottom: 1rem;
+  max-width: 80%;
+  flex: 1;
+}
+
+.Message--inbound {
+  margin-right: auto;
+  justify-content: flex-start;
+}
+
+.Message--outbound {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.Message-bubble {
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.Message--inbound .Message-bubble {
+  background-color: $light-gray;
+  border-top-left-radius: 0.25rem;
+}
+
+.Message--outbound .Message-bubble {
+  background-color: $light-blue;
+  border-top-right-radius: 0.25rem;
+}
+
+.Message-time {
+  font-size: 0.75rem;
+  color: $text-gray-700;
+  margin-top: 0.25rem;
+  text-align: right;
+}

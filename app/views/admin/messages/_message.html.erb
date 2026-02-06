@@ -1,0 +1,22 @@
+<!-- dom_id is used to identify the message in the DOM and ensures message uniqueness -->
+<div
+  id="<%= dom_id(message)%>"
+  class="MessageContainer Message Message--<%= message.direction %>"
+  data-controller="scroll">
+  <!-- data-bs attriutes comes from bootstrap -->
+  <% if message.error_code.present? %>
+    <i class="fas fa-exclamation-circle u-iconColor--blueBrandNight"
+      data-controller="tooltip"
+      data-tooltip-target="element"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="<%= message.error_message.presence || 'Erro desconhecido ao entregar a mensagem.' %>">
+    </i>
+  <% end %>
+  <div class="Message-bubble">
+    <%= simple_format(linkify_message_body(message.body)) %>
+    <div class="Message-time">
+      <%= message.created_at.in_time_zone("America/Sao_Paulo").strftime("%Y-%m-%d  - %H:%M") %>
+    </div>
+  </div>
+</div>

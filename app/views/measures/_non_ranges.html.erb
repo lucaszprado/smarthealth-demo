@@ -1,0 +1,7 @@
+<%# value = locals[:value] %>
+<%# unit_name = locals[:unit_name] %>
+
+<p class="u-textMargin--noMargin">
+  Última Medição: <%= last_measure_attributes[:value] %>
+  <%#= last_measure_attributes[:unit_name] %> <!-- This is not needed for non-numeric measures -->
+</p>

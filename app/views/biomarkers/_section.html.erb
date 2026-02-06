@@ -1,0 +1,10 @@
+<div class="ListSection" data-section-id="<%= section[:name] %>">
+  <div class="ListSection-header--sticky u-flex u-flex--justifyBetween u-flex--justifyStart mt-1">
+    <h2 class="u-fontSizeREM--secondary u-textFontWeight--bold"> <%=section[:name].upcase %> </h2>
+  </div>
+  <div class="ListSection-content">
+    <% section[:biomarkers].each do |biomarker| %>
+      <%= render partial: "shared/result_card", locals: result_card_attributes(human, biomarker) %>
+    <% end %>
+  </div>
+</div>

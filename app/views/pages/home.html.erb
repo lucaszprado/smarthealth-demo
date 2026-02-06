@@ -1,0 +1,192 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <%= image_tag "logo.png", width: 125, loading: "lazy", alt: "Logo" %>
+    </a>
+
+    <a href="https://wa.me/<%= TwilioConstants::PhoneNumbers.whatsapp_sender %>"
+      class="RetangularButtonKey RetangularButtonKey--horizontal u-block--inline u-background--blueBrandPrimary u-textColor--white fw-bold my-1">
+      Criar carteira
+    </a>
+
+    <!-- Colapsable navbar -->
+    <!--button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#features">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div-->
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section u-paddingTop--75RM">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h1 class="display-1 fw-bold mb-4">Carteira de <br> Saúde Digital</h1>
+        <h2 class="fs-3 pb-3"> Histórico de saúde centralizado,
+        <br> seguro e sempre com você!</h2>
+
+        <!-- Product Info Graphic -->
+        <div class="row justify-content-center text-center my-5">
+          <div class="col-md-6">
+            <%= webp_picture_tag "product_info_graphic.png", width: 300, class: "mx-auto" %>
+            <!-- The .webp is shown if supported -->
+            <!-- It takes on size and styles from the fallback <img> -->
+          </div>
+          <div class="col-md-6 u-flex u-flex--column u-flex--justifyCenter pt-5">
+            <h2>
+              <strong>Protagonize sua saúde</strong>
+            </h2>
+            <h4 class=" u-margin--01">
+              Organize seus exames
+            </h4>
+            <h4 class="u-margin--01">
+              Tenha uma visão integrada
+            </h4>
+
+            <h4 class="u-margin--01">
+                Entenda seu corpo
+            </h4>
+
+            <h4 class="u-margin--01">
+                Viva melhor!
+            </h4>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="features">
+  <!-- First Feature -->
+  <div class="u-background--white">
+    <div class="container">
+      <div class="row justify-content-center text-center py-4">
+        <div class="col-md-2 m-5">
+          <i class="fa-regular fa-file u-iconSize--7RM u-iconColor--blueBrandSecondary"></i>
+        </div>
+        <div class="col-md-5 u-flex u-flex--column u-flex--justifyCenter">
+          <h4 class="fw-bold">
+            3 tipos de exame suportados
+          </h4>
+          <p class="u-margin--005">
+            Sangue e urina: mais de 4 mil biomarcadores
+          </p>
+          <p class="u-margin--005">
+            Imagem: mais de 10 tipos de exames
+          </p>
+
+          <p class="u-margin--005">
+              Bioimpedância e composição corporal
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Second Feature-->
+  <div class= "u-background--lightGray">
+    <div class="container">
+      <div class="row justify-content-center text-center py-4">
+        <div class="col-md-5 order-2 order-md-1 u-flex u-flex--column u-flex--justifyCenter">
+          <h4 class="fw-bold">
+            Envio por WhatsApp
+          </h4>
+          <p class="u-margin--005">
+            Fez um novo exame?
+          </p>
+          <p class="u-margin--005">
+            Envie para o WhatsApp do myBase
+          </p>
+          <p class="u-margin--005">
+            Seu perfil é automaticamente atualizado
+          </p>
+        </div>
+
+        <div class="col-md-2 order-1 order-md-2 m-5">
+          <i class="fa-brands fa-whatsapp u-iconSize--7RM u-iconColor--blueBrandSecondary"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Third Feature -->
+  <div class="u-background--white">
+    <div class="container">
+      <div class="row justify-content-center text-center py-4">
+        <div class="col-md-2 m-5">
+          <i class="fa-solid fa-fingerprint u-iconSize--7RM u-iconColor--blueBrandSecondary"></i>
+        </div>
+        <div class="col-md-5 u-flex u-flex--column u-flex--justifyCenter">
+          <h4 class="fw-bold">
+            Compreenda seu corpo
+          </h4>
+          <p class="u-margin--005">
+            Saiba interpretar seus biomarcadores
+          </p>
+          <p class="u-margin--005">
+            Veja evolução e valores de referência
+          </p>
+          <p class="u-margin--005">
+            Entenda como eles se relacionam
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fourth Feature-->
+  <div class= "u-background--lightGray">
+    <div class="container">
+      <div class="row justify-content-center text-center py-4">
+        <div class="col-md-5 order-2 order-md-1 u-flex u-flex--column u-flex--justifyCenter">
+          <h4 class="fw-bold">
+            Perfil online e digital
+          </h4>
+          <p class="u-margin--005">
+            Seu médico solicitou novo exame?
+          </p>
+          <p class="u-margin--005">
+            Compartilhe seu perfil myBase
+          </p>
+          <p class="u-margin--005">
+            Seu histórico é sua identidade de saúde
+          </p>
+        </div>
+
+        <div class="col-md-2 order-1 order-md-2 m-5">
+          <i class="fa-solid fa-cloud-arrow-up u-iconSize--7RM u-iconColor--blueBrandSecondary"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<section id="footer" class="u-background--white">
+  <div class="small-letters border-top p-4 mx-3">
+    <p class="u-textAlign--center"> O myBase não é um serviço médico. Não substitui o aconselhamento, diagnóstico ou tratamento médico profissional. <br>
+        Esse site foi feito com 💙 por nosso time! :3
+    </p>
+  </div>
+</section>

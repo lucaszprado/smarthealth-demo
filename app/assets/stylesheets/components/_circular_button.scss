@@ -1,0 +1,70 @@
+// Circular Button to trigger KEY actions
+.CircleButtonKey {
+  @extend .u-buttonEffects--boxShadow;
+  @extend .u-buttonEffects--hover;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  //background-color: #f8f9fa;
+  cursor: pointer;
+  line-height: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  // CircleBUttonKey is applied to <a>, which is an inline element centered on left by default.
+  }
+
+.CircleButtonKey-icon {
+  //color: $blue-brand-secondary; // Icon color
+}
+
+@media (min-width: 768px) {
+  .ButtonsTriangle .CircleButtonKey  {
+  // Gets only the CircleButtonKey inside the WelcomePage-buttonsTriangle -> Descendant selectors
+    width: 10rem;
+    height: 10rem;
+    padding: 0.625rem;
+  }
+}
+
+//===============================
+// Circular Button to Navigate between pages
+
+.CircleButtonNavigation {
+  @extend .u-buttonEffects--boxShadow;
+  @extend .u-buttonEffects--hover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  text-align: center;
+  line-height: 0.85rem;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  width: 2.7rem; // 3.25rem;
+  height: 2.7rem; // 3.25rem;
+  // margin: 0.75rem 0 2rem 0.1rem;
+}
+
+
+@media (min-width: 768px) {
+  .CircleButtonNavigation {
+    width: 3.25rem; //2.7rem;
+    height: 3.25rem; //2.7rem;
+    padding: 0.625rem; //0.5rem;
+    border-radius: 3rem; //3rem;
+  }
+
+  .CircleButtonNavigation-icon {
+    width: 120%;
+    height: auto;
+  }
+}

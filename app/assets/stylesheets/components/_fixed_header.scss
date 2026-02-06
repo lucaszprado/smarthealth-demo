@@ -1,0 +1,14 @@
+
+// Used in biomarkers#index and imaging_reports#index
+// Similar to a navbar but following parent element width and part of body
+.FixedHeader {
+  position: sticky;
+  // Stick to the top of the page respecting the width of the parent element
+  top: 0;
+  width: 100%;
+  background: $light-gray; // Match your page background
+  z-index: 1020; // Ensure it stays above other elements
+  display: flex;
+  flex-direction: column; // Stack elements vertically
+  align-items: flex-start; // Align items to the left
+}

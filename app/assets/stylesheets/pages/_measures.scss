@@ -1,0 +1,14 @@
+// Measures page specific styles
+
+// Modifier: SearchResults-container constrained to chart height
+// Uses CSS custom property for dynamic height set by JavaScript
+.SearchResults-container--chartHeight {
+max-height: 90%;
+
+    // Elements inside ResultCard that will be adjusted from a min-width: 768px (large devices)
+@media (min-width: 768px) {
+
+  max-height: 12rem;
+
+  }
+}

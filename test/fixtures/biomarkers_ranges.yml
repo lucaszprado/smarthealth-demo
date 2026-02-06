@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gender: MyString
+  age: 1
+  possible_min_value: 1.5
+  possible_max_value: 1.5
+  optimal_min_value: 1.0
+  optimal_max_value: 1.5
+  biomarker: one
+
+two:
+  gender: MyString
+  age: 1
+  possible_min_value: 1.5
+  possible_max_value: 1.5
+  optimal_min_value: 1.0
+  optimal_max_value: 1.5
+  biomarker: two

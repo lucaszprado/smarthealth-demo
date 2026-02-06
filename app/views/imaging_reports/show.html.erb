@@ -1,0 +1,58 @@
+<div class = "container">
+  <div class = "row justify-content-center">
+    <div class = "col-12 col-lg-9">
+      <!-- Back button -->
+      <%= render 'shared/back_button_top', path_helper: human_imaging_reports_path(@human.id) %>
+
+      <h1 class="u-textSize--5 u-textFontWeight--bold mt-3 mb-3"> <%= " #{@imaging_report[:imaging_method]} #{@imaging_report[:title][0]} #{@imaging_report[:title][1]}"%> </h1>
+      <fs-6> Data exame: <%= stddate(@imaging_report[:date]) %> </fs-6>
+      <div class="u-flex u-flex--justifyStart LabelsContainer mb-4">
+          <fs-6 class="u-textMargin--noMargin">Sitema:</fs-6>
+          <% @imaging_report[:label_system].each do |label| %>
+            <p class="u-fontSizeVW--tertiary Label Label--<%=label_class(label)%>"> <%= label %> </p>
+          <% end %>
+      </div>
+
+      <div class="BoxElevated u-flex u-flex--column mb-5">
+        <fs-5> Médico responsável: <%= @imaging_report[:health_professional]&.name || "Sem médico solicitante" %> </fs-5>
+        <fs-6> Local do exame: <%= @imaging_report[:health_provider]&.name || "Provedor não identificado" %> </fs-6>
+      </div>
+
+      <h2 class="border-top pt-4 u-textSize--5"> Laudo </h2>
+      <div class="BoxElevated u-flex u-flex--column mb-5">
+        <p class="u-textAlign--justify"> <%= simple_format(@imaging_report[:content]) %> </p>
+      </div>
+
+      <h2 class="u-textSize--5"> Exames </h2>
+      <div class="BoxElevated mb-5">
+        <div class="row">
+          <div class="col-12 col-lg-6 u-flex">
+            <div class="">
+              <p class="mb-1"> Laudos originais </p>
+              <% @imaging_report[:report_urls].each_with_index do |url, index| %>
+                <%= link_to url, class:"u-linkStdDisable" do %>
+                  <p class="u-textMargin--noMargin u-fontSizeREM--secondary u-textColor--gray">
+                    <i class="fa-solid fa-file-pdf gray-icon"></i>
+                    Laudo <%= index + 1 %> de <%= @imaging_report[:report_urls].count %>
+                  </p>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="ms-3 ps-3 border-start">
+              <p class="mb-1"> Imagens originais </p>
+              <% @imaging_report[:image_urls].each_with_index do |url, index| %>
+                <%= link_to url, class:"u-linkStdDisable" do %>
+                  <p class="u-textMargin--noMargin u-fontSizeREM--secondary u-textColor--gray">
+                    <i class="fa-solid fa-file-pdf gray-icon"></i>
+                    Imagem <%= index + 1 %> de <%= @imaging_report[:image_urls].count %>
+                  </p>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

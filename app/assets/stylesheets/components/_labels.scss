@@ -1,0 +1,40 @@
+// COMPONENT: Label (Used across multiple cards)
+
+// Container where labels are placed
+.LabelsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  align-items: center;
+  min-width: 0;
+  flex-shrink: 1;
+  margin-top: 0.25rem;
+}
+
+// Label cards
+.Label {
+  display: flex;
+  align-items: center;
+  padding: 0.1rem 0.2rem;
+  font-weight: normal;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+// Label card colors
+.Label--type1 { background-color: $teal; }
+.Label--type2 { background-color: $green; }
+.Label--type3 { background-color: $cyan; }
+.Label--type4 { background-color: $yellow; }
+.Label--type5 { background-color: $blue; }
+.Label--type6 { background-color: $purple; }
+.Label--type7 { background-color: $pink; }
+.Label--type8 { background-color: $turquoise; }
+.Label--type9 { background-color: $blue-light; }
+.Label--type10 { background-color: $brown; }
+.Label--type11 { background-color: $orange; }
+.Label--default { background-color: $magenta; }

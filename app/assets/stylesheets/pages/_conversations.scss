@@ -1,0 +1,18 @@
+.ConversationShow {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ConversationShow-header {
+
+}
+
+.ConversationShow-title {
+  margin-bottom: 0;
+}
+
+.ConversationShow-container {
+  display: flex;
+  flex-direction: column;
+}

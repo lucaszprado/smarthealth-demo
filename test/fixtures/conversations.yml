@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  human: one
+  customer_phone_number: MyString
+  company_phone_number: MyString
+  provider_conversation_id: MyString
+  status: 1
+  last_message_at: 2025-05-08 15:55:36
+
+two:
+  human: two
+  customer_phone_number: MyString
+  company_phone_number: MyString
+  provider_conversation_id: MyString
+  status: 1
+  last_message_at: 2025-05-08 15:55:36

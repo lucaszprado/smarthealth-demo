@@ -1,0 +1,6 @@
+<!-- Chart frame content - includes chart controller inside the frame -->
+<div class="chart-container"
+     data-controller="chart"
+     data-chart-biomarkers-data-value="<%= format_biomarker_series_for_chart(biomarker_series).to_json%>">
+  <canvas class="chart-container" data-chart-target="measures"></canvas>
+</div>

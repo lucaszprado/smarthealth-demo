@@ -1,0 +1,52 @@
+<!-- Rendering Partial -->
+<%= link_to link,
+            class: "text-decoration-none link-dark",
+            data: { turbo_frame: "_top" } do %>
+  <div class=" <%="ResultCard ResultCard--#{context.gsub('_', '-')}" %> border-top ps-1 u-flex u-flex--justifyBetween u-flex--alignCenter"> <!--ps-3-->
+    <!-- Icon component -->
+    <!-- Uncomment to use icon anr remove ps-1 from Title + Label Component below
+    <div class="me-1 u-iconColor--blueBrandSecondary">
+      <i class=" <%= icon_path %> "></i>
+    </div>
+    -->
+    <!-- Title + Label Component -->
+    <div class="ResultCard-content ps-1">
+      <!-- Title Component -->
+      <p class="ResultCard-title u-fontSizeVW--primary u-textMargin--noMargin"> <%= title %> </p>
+
+      <!-- Label Component -->
+      <% if labels.present? %>
+        <div class="LabelsContainer">
+          <% labels.each do |label| %>
+            <p class="Label Label--<%= label_class(label) %> u-fontSizeVW--quaternary"> <%= label %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Key Infos = Source Specific info + Status + Date Component -->
+    <div class="ResultCard-keyInfos u-textAlign--right mb-1">
+
+      <div class="u-flex u-flex--justifyBetween u-flex--alignCenter">
+        <!-- Source specific component -->
+        <p class="u-fontSizeVW--<%=card_text_size(data_type)%> mb-1"><%= key_info %></p>
+
+        <!-- Status component -->
+        <% if status.present? %>
+          <span class="ResultCard-statusIndicator is-status--<%= status %> mb-1"></span>
+        <%end%>
+
+      </div>
+
+      <!-- Date component - Different for different contexts -->
+      <div>
+        <% if context == 'imaging_reports' || controller_name == 'imaging_reports' %>
+          <p class="u-fontSizeVW--tertiary u-textMargin--noMargin"> Data do exame: <%= date.strftime("%d/%m/%Y")%></p>
+        <% else %>
+          <p class="u-fontSizeVW--tertiary u-textMargin--noMargin"> Último exame: <%= date.strftime("%d/%m/%Y") %></p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+<% end %>
